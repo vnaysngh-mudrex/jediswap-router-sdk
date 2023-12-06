@@ -1,6 +1,23 @@
-import { Percent, Price, sqrt, Token, CurrencyAmount, TradeType, WETH9, Ether, Currency } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
-import { encodeSqrtRatioX96, FeeAmount, nearestUsableTick, Pool, TickMath, TICK_SPACINGS } from '@uniswap/v3-sdk'
+import {
+  Percent,
+  Price,
+  sqrt,
+  Token,
+  CurrencyAmount,
+  TradeType,
+  WETH9,
+  Ether,
+  Currency,
+} from '@vnaysn/jediswap-sdk-core'
+import { Pair } from '@vnaysn/jediswap-sdk-v2'
+import {
+  encodeSqrtRatioX96,
+  FeeAmount,
+  nearestUsableTick,
+  Pool,
+  TickMath,
+  TICK_SPACINGS,
+} from '@vnaysn/jediswap-sdk-v3'
 import JSBI from 'jsbi'
 import { MixedRouteSDK } from './route'
 import { MixedRouteTrade } from './trade'

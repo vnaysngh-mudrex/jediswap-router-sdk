@@ -1,7 +1,15 @@
 import { Interface } from '@ethersproject/abi'
-import { Currency, CurrencyAmount, Percent, TradeType, validateAndParseAddress, WETH9 } from '@uniswap/sdk-core'
+import {
+  ChainId,
+  Currency,
+  CurrencyAmount,
+  Percent,
+  Token,
+  TradeType,
+  validateAndParseAddress,
+} from '@vnaysn/jediswap-sdk-core'
 import { abi } from '@uniswap/swap-router-contracts/artifacts/contracts/interfaces/ISwapRouter02.sol/ISwapRouter02.json'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
+import { Trade as V2Trade } from '@vnaysn/jediswap-sdk-v2'
 import {
   encodeRouteToPath,
   FeeOptions,
@@ -13,7 +21,7 @@ import {
   SelfPermit,
   toHex,
   Trade as V3Trade,
-} from '@uniswap/v3-sdk'
+} from '@vnaysn/jediswap-sdk-v3'
 import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
 import { ADDRESS_THIS, MSG_SENDER } from './constants'
@@ -30,6 +38,23 @@ import { partitionMixedRouteByProtocol, getOutputOfPools } from './utils'
 
 const ZERO = JSBI.BigInt(0)
 const REFUND_ETH_PRICE_IMPACT_THRESHOLD = new Percent(JSBI.BigInt(50), JSBI.BigInt(100))
+
+const WETH: { [chainId in ChainId]: Token } = {
+  [ChainId.GOERLI]: new Token(
+    ChainId.GOERLI,
+    '0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7',
+    18,
+    'ETH',
+    'ETHER'
+  ),
+  [ChainId.MAINNET]: new Token(
+    ChainId.MAINNET,
+    '0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7',
+    18,
+    'ETH',
+    'ETHER'
+  ),
+}
 
 /**
  * Options for producing the arguments to send calls to the router.
@@ -586,8 +611,8 @@ export abstract class SwapRouter {
     const { positionAmountIn, positionAmountOut } = SwapRouter.getPositionAmounts(position, zeroForOne)
 
     // if tokens are native they will be converted to WETH9
-    const tokenIn = inputIsNative ? WETH9[chainId] : positionAmountIn.currency.wrapped
-    const tokenOut = outputIsNative ? WETH9[chainId] : positionAmountOut.currency.wrapped
+    const tokenIn = inputIsNative ? WETH[chainId as ChainId] : positionAmountIn.currency.wrapped
+    const tokenOut = outputIsNative ? WETH[chainId as ChainId] : positionAmountOut.currency.wrapped
 
     // if swap output does not make up whole outputTokenBalanceDesired, pull in remaining tokens for adding liquidity
     const amountOutRemaining = positionAmountOut.subtract(quoteAmountOut.wrapped)

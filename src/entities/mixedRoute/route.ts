@@ -1,8 +1,8 @@
 import invariant from 'tiny-invariant'
 
-import { Currency, Price, Token } from '@uniswap/sdk-core'
-import { Pool } from '@uniswap/v3-sdk'
-import { Pair } from '@uniswap/v2-sdk'
+import { Currency, Price, Token } from '@vnaysn/jediswap-sdk-core'
+import { Pool } from '@vnaysn/jediswap-sdk-v3'
+import { Pair } from '@vnaysn/jediswap-sdk-v2'
 
 type TPool = Pair | Pool
 
@@ -54,7 +54,7 @@ export class MixedRouteSDK<TInput extends Currency, TOutput extends Currency> {
     this.output = output ?? tokenPath[tokenPath.length - 1]
   }
 
-  public get chainId(): number {
+  public get chainId(): string {
     return this.pools[0].chainId
   }
 
