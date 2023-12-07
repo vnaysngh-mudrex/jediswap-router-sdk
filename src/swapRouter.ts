@@ -40,20 +40,8 @@ const ZERO = JSBI.BigInt(0)
 const REFUND_ETH_PRICE_IMPACT_THRESHOLD = new Percent(JSBI.BigInt(50), JSBI.BigInt(100))
 
 const WETH: { [chainId in ChainId]: Token } = {
-  [ChainId.GOERLI]: new Token(
-    ChainId.GOERLI,
-    '0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7',
-    18,
-    'ETH',
-    'ETHER'
-  ),
-  [ChainId.MAINNET]: new Token(
-    ChainId.MAINNET,
-    '0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7',
-    18,
-    'ETH',
-    'ETHER'
-  ),
+  [ChainId.GOERLI]: new Token(ChainId.GOERLI, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'ETH', 'ETHER'),
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'ETH', 'ETHER'),
 }
 
 /**
