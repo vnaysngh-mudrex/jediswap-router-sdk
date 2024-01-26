@@ -1737,10 +1737,10 @@
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
 
-"@vnaysn/jediswap-sdk-v3@^15.0.0":
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/@vnaysn/jediswap-sdk-v3/-/jediswap-sdk-v3-15.0.0.tgz#c632c1c37ffdeaf6b9c05dc1a4f2e569e21fcff3"
-  integrity sha512-VzlJfUTFvDK4EwvjvV85YZF5P8T4/ROwS1i3cTe2/UTAWAK9ZvgKZMrAGN2yl45FwCja7y/PZ4x1d0Gwl4ivgA==
+"@vnaysn/jediswap-sdk-v3@^16.0.0":
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/@vnaysn/jediswap-sdk-v3/-/jediswap-sdk-v3-16.0.0.tgz#e0ef67a34baeeb583ef7035118a73dc16cb9ae63"
+  integrity sha512-rhGh65cUWZbW8dQMlRLrEzyxsq4dbInooAEKPp765O2r2d1p1hQTSCeRqeHGJVUa8/fVbPIpQGmL/0vgjRJxeA==
   dependencies:
     "@ethersproject/abi" "^5.0.12"
     "@ethersproject/solidity" "^5.0.9"
