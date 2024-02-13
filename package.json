@@ -31,9 +31,9 @@
     "@uniswap/sdk-core": "^4.0.7",
     "@uniswap/swap-router-contracts": "^1.1.0",
     "@uniswap/v3-sdk": "^3.10.0",
-    "@vnaysn/jediswap-sdk-core": "^9.3.0",
-    "@vnaysn/jediswap-sdk-v2": "^8.0.0",
-    "@vnaysn/jediswap-sdk-v3": "^17.0.0"
+    "@vnaysn/jediswap-sdk-core": "^10.3.0",
+    "@vnaysn/jediswap-sdk-v2": "^9.0.0",
+    "@vnaysn/jediswap-sdk-v3": "^18.0.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.25",
