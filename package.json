@@ -1,6 +1,6 @@
 {
   "name": "@vnaysn/jediswap-router-sdk",
-  "version": "14.0.0",
+  "version": "15.0.0",
   "description": "An sdk for routing swaps using Jediswap v2 and Jediswap v3.",
   "publishConfig": {
     "access": "public"
@@ -32,7 +32,7 @@
     "@uniswap/swap-router-contracts": "^1.1.0",
     "@uniswap/v3-sdk": "^3.10.0",
     "@vnaysn/jediswap-sdk-core": "^10.3.0",
-    "@vnaysn/jediswap-sdk-v2": "^9.0.0",
+    "@vnaysn/jediswap-sdk-v2": "^10.0.0",
     "@vnaysn/jediswap-sdk-v3": "^18.0.0"
   },
   "devDependencies": {
